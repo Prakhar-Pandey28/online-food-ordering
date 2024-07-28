@@ -1,9 +1,15 @@
 {% extends 'food/base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Welcome to Our Online Restaurant{% endblock %}
 
 {% block content %}
-
-    <div class="home"></div>
-
+<div class="home">
+    <div class="overlay">
+        <div class="title">
+            <h1 class="display-1">Welcome to apनa Zyka!</h1>
+            <p class="lead mt-4">Bite into bliss</p>
+            <a href="{% url 'food:pizza_view' %}" class="btn btn-primary btn-lg">Explore Our Menu</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

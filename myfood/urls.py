@@ -20,6 +20,8 @@ from food import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="index"),
-    path('food/', include('food.urls', namespace='food')),
+    path('', views.index, name='index'),
+    path('food/', include('food.urls')),
+    path('create-payment/', views.create_payment, name='create_payment'),
+    path('food/order/<str:client_secret>/', views.payment_callback, name='payment_callback'),
 ]

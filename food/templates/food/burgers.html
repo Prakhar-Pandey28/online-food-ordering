@@ -1,6 +1,7 @@
+<!-- burgers.html -->
 {% extends 'food/base.html' %}
 
-{% block title %}Pizza{% endblock %}
+{% block title %}Burger{% endblock %}
 
 {% load static %}
 
@@ -8,26 +9,26 @@
 <div class="container-fluid">
     <div class="row text-center">
         <div class="col-md-8 text-center">
-            <h2 class="title">Our Pizzas</h2>
+            <h2 class="title">Our Burgers</h2>
             <div class="row">
-                {% for pizza in pizzas %}
+                {% for burger in burgers %}
                 <div class="col-md-6 p-4">
-                    <img class="picture" src="{{ pizza.pImage }}" alt="{{ pizza.name }}">
-                    <h4 class="pt-3" id="piz{{ pizza.id }}">{{ pizza.name }}</h4>
+                    <img class="picture" src="{{ burger.bImage }}" alt="{{ burger.name }}">
+                    <h4 class="pt-3" id="burg{{ burger.id }}">{{ burger.name }}</h4>
                     <div class="form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="pizza{{ pizza.id }}" value="{{ pizza.priceM }}" checked>
-                            M: {{ pizza.priceM }} $
+                            <input class="form-check-input" type="radio" name="burger{{ burger.id }}" value="{{ burger.priceM }}" checked>
+                            M: {{ burger.priceM }} $
                         </label>
                     </div>
                     <div class="form-check-inline">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="pizza{{ pizza.id }}" value="{{ pizza.priceL }}">
-                            L: {{ pizza.priceL }} $
+                            <input class="form-check-input" type="radio" name="burger{{ burger.id }}" value="{{ burger.priceL }}">
+                            L: {{ burger.priceL }} $
                         </label>
                     </div>
                     <div>
-                        <button class="btn btn-info mt-3" onclick="addPizza('{{ pizza.id }}')">Add to Cart</button>
+                        <button class="btn btn-info mt-3" onclick="addBurger('{{ burger.id }}')">Add to Cart</button>
                     </div>
                 </div>
                 {% endfor %}
@@ -36,8 +37,8 @@
         <div class="col-md-4 orders">
             <div class="bg-dark p-4 rounded text-light">
                 <h2 class="text-center">Order list</h2>
-                <ul id="pcart"></ul>
-                <h4 class="text-right" id="ptotal">Total: 0 $</h4>
+                <ul id="bcart"></ul>
+                <h4 class="text-right" id="btotal">Total: 0 $</h4>
             </div>
         </div>
     </div>

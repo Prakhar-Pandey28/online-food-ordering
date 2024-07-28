@@ -1,0 +1,28 @@
+<!-- order.html -->
+{% extends 'food/base.html' %}
+
+{% block title %}Order{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <center><h4>Order Summary</h4></center>
+    <form id="orderForm">
+        <h5>Pizza: <span id="ptotal">0 $</span></h5>
+        <ul id="pcart"></ul><br>
+
+        <h5>Burgers: <span id="btotal">0 $</span></h5>
+        <ul id="bcart"></ul><br>
+
+        <h5>Overall Total: <span id="overallTotal">0 $</span></h5>
+
+        <div class="form-group">
+           <center><label for="note">Address and Phone Number</label>
+            <textarea class="form-control" id="note" rows="3"></textarea></center>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="placeOrder()">Place Order</button>
+    </form>
+</div>
+<script src="{% static 'food/js/cart.js' %}"></script>
+{% endblock %}

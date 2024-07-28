@@ -1,0 +1,28 @@
+{% extends 'food/base.html' %}
+
+{% block title %}Success{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="alert alert-success" role="alert">
+        <h2 class="text-center">We Have Received Your Order</h2>
+        <h4 class="text-center">Order Number: <strong>{{ orderNum }}</strong></h4>
+        <h4 class="mt-4">You Have Ordered:</h4>
+        <ul class="list-group">
+            {% for item in items %}
+            <li class="list-group-item">
+                {{ item.name }} - {{ item.size }} - ${{ item.price }}
+            </li>
+            {% endfor %}
+        </ul>
+        <h4 class="mt-4">Total: <strong>${{ bill }}</strong></h4>
+        <h4 class="mt-4">If you want to modify your order, please call us:</h4>
+        <h4 class="text-primary">Phone number: <strong>8355134958</strong></h4>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'food:index' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
